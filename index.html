@@ -409,8 +409,15 @@ let charts = {};
 
 // ── UTILS ──────────────────────────────────────────────────────────────
 const fmt = {
-  usd:  v => '$' + Number(v).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}),
-  num:  v => Number(v).toLocaleString('en-US'),
+  currency: v => {
+    const sym = (data && data.meta && data.meta.currency === 'BRL') ? 'R$' : '$';
+    return sym + Number(v).toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  },
+  usd:  v => {
+    const sym = (data && data.meta && data.meta.currency === 'BRL') ? 'R$' : '$';
+    return sym + Number(v).toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  },
+  num:  v => Number(v).toLocaleString('pt-BR'),
   pct:  v => Number(v).toFixed(2) + '%',
   x:    v => Number(v).toFixed(2) + 'x',
   pos:  v => Number(v).toFixed(1),
@@ -428,6 +435,14 @@ function delta(curr, prev, inverted = false) {
 }
 
 function kpiCard(label, value, prev, formatter, inverted = false) {
+  if (value === null || value === undefined) {
+    return `
+      <div class="kpi-card">
+        <div class="kpi-label">${label}</div>
+        <div class="kpi-value" style="font-size:16px;color:var(--text-muted)">Aguardando GA4</div>
+        <div class="kpi-delta flat" style="font-size:10px">Configure GA4_PROPERTY_ID</div>
+      </div>`;
+  }
   const d = delta(value, prev, inverted);
   const deltaHtml = d.pct
     ? `<div class="kpi-delta ${d.dir}">${d.arrow} ${d.pct}% vs prev period</div>`
@@ -503,6 +518,16 @@ function renderAll() {
 // ── OVERVIEW ─────────────────────────────────────────────────────────
 function renderOverview() {
   const ex = data.executive;
+
+  // GA4 pending banner
+  const ga4Banner = ex._ga4_pending ? `
+    <div style="background:#fffbeb;border:1px solid #fcd34d;border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:13px;color:#92400e;display:flex;align-items:center;gap:10px">
+      <span style="font-size:18px">⚠️</span>
+      <div><strong>GA4 não configurado</strong> — Revenue, ROAS e Orders dependem do Google Analytics 4.
+      Adicione o <strong>GA4 Property ID</strong> nas configurações para ativar esses dados.</div>
+    </div>` : '';
+  document.getElementById('kpi-overview').insertAdjacentHTML('beforebegin', ga4Banner);
+
   const kpis = [
     kpiCard('Revenue', ex.revenue, ex.revenue_prev, fmt.usd),
     kpiCard('ROAS', ex.roas, ex.roas_prev, fmt.x),

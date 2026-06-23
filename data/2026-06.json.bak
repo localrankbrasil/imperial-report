@@ -4,25 +4,23 @@
     "period_label": "June 2026",
     "generated_at": "2026-06-23",
     "client": "Imperial Brazilian Cowhide Rug",
-    "currency": "BRL"
+    "currency": "USD"
   },
   "executive": {
-    "revenue": null,
-    "revenue_prev": null,
-    "roas": null,
-    "roas_prev": null,
+    "revenue": 0.0,
+    "revenue_prev": 0.0,
+    "roas": 0.0,
+    "roas_prev": 0.0,
     "cost": 2102.08,
     "cost_prev": 324.48,
-    "orders": null,
-    "orders_prev": null,
-    "avg_order_value": null,
-    "avg_order_value_prev": null,
+    "orders": 0,
+    "orders_prev": 0,
+    "avg_order_value": 0,
+    "avg_order_value_prev": 0,
     "paid_clicks": 358,
     "paid_clicks_prev": 46,
     "impressions": 78269,
-    "impressions_prev": 7332,
-    "_ga4_pending": true,
-    "_note": "Revenue, ROAS e Orders dependem do GA4. Adicione GA4_PROPERTY_ID para ativar."
+    "impressions_prev": 7332
   },
   "google_ads": {
     "summary": {
