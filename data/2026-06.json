@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "period": "2026-06",
+    "period_label": "Junho 2026",
+    "generated_at": "2026-06-23",
+    "client": "Imperial Brazilian Cowhide Rug",
+    "currency": "USD"
+  },
+  "executive": {
+    "revenue": 2847.00,
+    "revenue_prev": 2103.00,
+    "roas": 8.20,
+    "roas_prev": 7.10,
+    "cost": 347.20,
+    "cost_prev": 296.10,
+    "orders": 12,
+    "orders_prev": 9,
+    "avg_order_value": 237.25,
+    "avg_order_value_prev": 233.67,
+    "paid_clicks": 1243,
+    "paid_clicks_prev": 987,
+    "impressions": 48320,
+    "impressions_prev": 39870
+  },
+  "google_ads": {
+    "summary": {
+      "cost": 347.20,
+      "cost_prev": 296.10,
+      "clicks": 1243,
+      "clicks_prev": 987,
+      "impressions": 48320,
+      "impressions_prev": 39870,
+      "ctr": 2.57,
+      "ctr_prev": 2.47,
+      "avg_cpc": 0.28,
+      "avg_cpc_prev": 0.30,
+      "conversions": 12,
+      "conversions_prev": 9,
+      "conversion_value": 2847.00,
+      "conversion_value_prev": 2103.00,
+      "roas": 8.20,
+      "roas_prev": 7.10
+    },
+    "campaigns": [
+      {
+        "name": "Top Sellers - Small Rugs",
+        "status": "ENABLED",
+        "cost": 124.80,
+        "clicks": 487,
+        "impressions": 18430,
+        "ctr": 2.64,
+        "avg_cpc": 0.26,
+        "conversions": 5,
+        "conversion_value": 1045.00,
+        "roas": 8.37
+      },
+      {
+        "name": "Catch-All – Average, Large & Patchwork",
+        "status": "ENABLED",
+        "cost": 222.40,
+        "clicks": 756,
+        "impressions": 29890,
+        "ctr": 2.53,
+        "avg_cpc": 0.29,
+        "conversions": 7,
+        "conversion_value": 1802.00,
+        "roas": 8.10
+      }
+    ],
+    "daily": [
+      {"date": "2026-06-01", "cost": 11.20, "clicks": 42, "impressions": 1620, "conversions": 0, "conversion_value": 0},
+      {"date": "2026-06-02", "cost": 9.80, "clicks": 38, "impressions": 1480, "conversions": 1, "conversion_value": 219.00},
+      {"date": "2026-06-03", "cost": 12.40, "clicks": 51, "impressions": 1890, "conversions": 0, "conversion_value": 0},
+      {"date": "2026-06-04", "cost": 10.60, "clicks": 44, "impressions": 1640, "conversions": 1, "conversion_value": 249.00},
+      {"date": "2026-06-05", "cost": 13.20, "clicks": 55, "impressions": 2100, "conversions": 1, "conversion_value": 299.00},
+      {"date": "2026-06-06", "cost": 11.80, "clicks": 47, "impressions": 1780, "conversions": 0, "conversion_value": 0},
+      {"date": "2026-06-07", "cost": 9.40, "clicks": 36, "impressions": 1390, "conversions": 0, "conversion_value": 0},
+      {"date": "2026-06-08", "cost": 14.20, "clicks": 58, "impressions": 2240, "conversions": 1, "conversion_value": 189.00},
+      {"date": "2026-06-09", "cost": 12.60, "clicks": 50, "impressions": 1950, "conversions": 0, "conversion_value": 0},
+      {"date": "2026-06-10", "cost": 15.40, "clicks": 63, "impressions": 2380, "conversions": 1, "conversion_value": 339.00},
+      {"date": "2026-06-11", "cost": 11.00, "clicks": 43, "impressions": 1670, "conversions": 0, "conversion_value": 0},
+      {"date": "2026-06-12", "cost": 13.80, "clicks": 56, "impressions": 2150, "conversions": 1, "conversion_value": 249.00},
+      {"date": "2026-06-13", "cost": 10.20, "clicks": 40, "impressions": 1520, "conversions": 0, "conversion_value": 0},
+      {"date": "2026-06-14", "cost": 9.60, "clicks": 37, "impressions": 1430, "conversions": 0, "conversion_value": 0},
+      {"date": "2026-06-15", "cost": 16.80, "clicks": 68, "impressions": 2560, "conversions": 2, "conversion_value": 538.00},
+      {"date": "2026-06-16", "cost": 12.00, "clicks": 48, "impressions": 1840, "conversions": 0, "conversion_value": 0},
+      {"date": "2026-06-17", "cost": 14.60, "clicks": 59, "impressions": 2260, "conversions": 1, "conversion_value": 219.00},
+      {"date": "2026-06-18", "cost": 11.40, "clicks": 45, "impressions": 1720, "conversions": 0, "conversion_value": 0},
+      {"date": "2026-06-19", "cost": 13.00, "clicks": 52, "impressions": 2010, "conversions": 1, "conversion_value": 299.00},
+      {"date": "2026-06-20", "cost": 10.80, "clicks": 43, "impressions": 1650, "conversions": 0, "conversion_value": 0},
+      {"date": "2026-06-21", "cost": 9.20, "clicks": 35, "impressions": 1350, "conversions": 0, "conversion_value": 0},
+      {"date": "2026-06-22", "cost": 12.20, "clicks": 49, "impressions": 1880, "conversions": 1, "conversion_value": 249.00},
+      {"date": "2026-06-23", "cost": 10.40, "clicks": 41, "impressions": 1600, "conversions": 0, "conversion_value": 0}
+    ],
+    "search_terms": [
+      {"term": "cowhide rug", "clicks": 187, "impressions": 8420, "ctr": 2.22, "conversions": 2},
+      {"term": "cowhide rug small", "clicks": 143, "impressions": 5830, "ctr": 2.45, "conversions": 2},
+      {"term": "brazilian cowhide rug", "clicks": 132, "impressions": 4960, "ctr": 2.66, "conversions": 1},
+      {"term": "cowhide rug large", "clicks": 98, "impressions": 4120, "ctr": 2.38, "conversions": 2},
+      {"term": "natural cowhide rug", "clicks": 87, "impressions": 3680, "ctr": 2.36, "conversions": 1},
+      {"term": "genuine leather rug", "clicks": 76, "impressions": 3240, "ctr": 2.35, "conversions": 1},
+      {"term": "cowhide rug average size", "clicks": 68, "impressions": 2940, "ctr": 2.31, "conversions": 1},
+      {"term": "patchwork cowhide rug", "clicks": 54, "impressions": 2480, "ctr": 2.18, "conversions": 1},
+      {"term": "round cowhide rug", "clicks": 49, "impressions": 2160, "ctr": 2.27, "conversions": 0},
+      {"term": "brown white cowhide rug", "clicks": 42, "impressions": 1890, "ctr": 2.22, "conversions": 0}
+    ]
+  },
+  "merchant_center": {
+    "approved": 211,
+    "disapproved": 19,
+    "limited": 0,
+    "under_review": 2,
+    "total": 232,
+    "by_category": [
+      {"category": "Cowhide Rug Small", "count": 56, "approved": 56, "disapproved": 0},
+      {"category": "Cowhide Rug Average", "count": 52, "approved": 52, "disapproved": 0},
+      {"category": "Cowhide Rug Large", "count": 77, "approved": 77, "disapproved": 0},
+      {"category": "Round Cowhide Patchwork", "count": 26, "approved": 26, "disapproved": 0},
+      {"category": "Out of Stock (removidos)", "count": 19, "approved": 0, "disapproved": 19}
+    ],
+    "top_products": [
+      {"id": "gla_23456", "title": "Cowhide Rug Large 7'5\"x7'1\" Brown & White", "impressions": 3240, "clicks": 87, "ctr": 2.69},
+      {"id": "gla_22891", "title": "Cowhide Rug Small 5'9\"x5'7\" Brown & White", "impressions": 2980, "clicks": 76, "ctr": 2.55},
+      {"id": "gla_24103", "title": "Cowhide Rug Average 6'8\"x6'4\" Tricolor", "impressions": 2760, "clicks": 71, "ctr": 2.57},
+      {"id": "gla_23720", "title": "Patchwork 5'3\" diameter Mandala", "impressions": 2430, "clicks": 58, "ctr": 2.39},
+      {"id": "gla_22670", "title": "Cowhide Rug Large 8'2\"x7'4\" Black & White", "impressions": 2180, "clicks": 54, "ctr": 2.48}
+    ]
+  },
+  "ga4": {
+    "summary": {
+      "sessions": 1842,
+      "sessions_prev": 1543,
+      "users": 1687,
+      "users_prev": 1398,
+      "revenue": 2847.00,
+      "revenue_prev": 2103.00,
+      "transactions": 12,
+      "transactions_prev": 9,
+      "conversion_rate": 0.65,
+      "conversion_rate_prev": 0.58,
+      "avg_session_duration": "1:42",
+      "bounce_rate": 68.3,
+      "bounce_rate_prev": 71.2
+    },
+    "channels": [
+      {"channel": "Paid Search", "sessions": 1243, "revenue": 2847.00, "transactions": 12, "conversion_rate": 0.97},
+      {"channel": "Organic Search", "sessions": 387, "revenue": 0, "transactions": 0, "conversion_rate": 0},
+      {"channel": "Direct", "sessions": 142, "revenue": 0, "transactions": 0, "conversion_rate": 0},
+      {"channel": "Organic Social", "sessions": 48, "revenue": 0, "transactions": 0, "conversion_rate": 0},
+      {"channel": "Referral", "sessions": 22, "revenue": 0, "transactions": 0, "conversion_rate": 0}
+    ],
+    "daily": [
+      {"date": "2026-06-01", "sessions": 72, "revenue": 0, "transactions": 0},
+      {"date": "2026-06-02", "sessions": 68, "revenue": 219.00, "transactions": 1},
+      {"date": "2026-06-03", "sessions": 81, "revenue": 0, "transactions": 0},
+      {"date": "2026-06-04", "sessions": 74, "revenue": 249.00, "transactions": 1},
+      {"date": "2026-06-05", "sessions": 89, "revenue": 299.00, "transactions": 1},
+      {"date": "2026-06-06", "sessions": 77, "revenue": 0, "transactions": 0},
+      {"date": "2026-06-07", "sessions": 61, "revenue": 0, "transactions": 0},
+      {"date": "2026-06-08", "sessions": 93, "revenue": 189.00, "transactions": 1},
+      {"date": "2026-06-09", "sessions": 82, "revenue": 0, "transactions": 0},
+      {"date": "2026-06-10", "sessions": 98, "revenue": 339.00, "transactions": 1},
+      {"date": "2026-06-11", "sessions": 71, "revenue": 0, "transactions": 0},
+      {"date": "2026-06-12", "sessions": 88, "revenue": 249.00, "transactions": 1},
+      {"date": "2026-06-13", "sessions": 65, "revenue": 0, "transactions": 0},
+      {"date": "2026-06-14", "sessions": 60, "revenue": 0, "transactions": 0},
+      {"date": "2026-06-15", "sessions": 107, "revenue": 538.00, "transactions": 2},
+      {"date": "2026-06-16", "sessions": 79, "revenue": 0, "transactions": 0},
+      {"date": "2026-06-17", "sessions": 94, "revenue": 219.00, "transactions": 1},
+      {"date": "2026-06-18", "sessions": 73, "revenue": 0, "transactions": 0},
+      {"date": "2026-06-19", "sessions": 84, "revenue": 299.00, "transactions": 1},
+      {"date": "2026-06-20", "sessions": 70, "revenue": 0, "transactions": 0},
+      {"date": "2026-06-21", "sessions": 57, "revenue": 0, "transactions": 0},
+      {"date": "2026-06-22", "sessions": 80, "revenue": 249.00, "transactions": 1},
+      {"date": "2026-06-23", "sessions": 67, "revenue": 0, "transactions": 0}
+    ],
+    "funnel": {
+      "sessions": 1842,
+      "product_views": 843,
+      "add_to_cart": 187,
+      "checkout_started": 48,
+      "purchase": 12
+    }
+  },
+  "search_console": {
+    "summary": {
+      "clicks": 89,
+      "clicks_prev": 74,
+      "impressions": 12480,
+      "impressions_prev": 10920,
+      "ctr": 0.71,
+      "ctr_prev": 0.68,
+      "avg_position": 24.3,
+      "avg_position_prev": 26.8
+    },
+    "daily": [
+      {"date": "2026-06-01", "clicks": 3, "impressions": 487},
+      {"date": "2026-06-02", "clicks": 4, "impressions": 521},
+      {"date": "2026-06-03", "clicks": 5, "impressions": 563},
+      {"date": "2026-06-04", "clicks": 3, "impressions": 498},
+      {"date": "2026-06-05", "clicks": 6, "impressions": 612},
+      {"date": "2026-06-06", "clicks": 4, "impressions": 534},
+      {"date": "2026-06-07", "clicks": 2, "impressions": 421},
+      {"date": "2026-06-08", "clicks": 5, "impressions": 578},
+      {"date": "2026-06-09", "clicks": 4, "impressions": 543},
+      {"date": "2026-06-10", "clicks": 6, "impressions": 634},
+      {"date": "2026-06-11", "clicks": 3, "impressions": 487},
+      {"date": "2026-06-12", "clicks": 5, "impressions": 567},
+      {"date": "2026-06-13", "clicks": 4, "impressions": 512},
+      {"date": "2026-06-14", "clicks": 3, "impressions": 478},
+      {"date": "2026-06-15", "clicks": 7, "impressions": 698},
+      {"date": "2026-06-16", "clicks": 4, "impressions": 534},
+      {"date": "2026-06-17", "clicks": 5, "impressions": 589},
+      {"date": "2026-06-18", "clicks": 3, "impressions": 467},
+      {"date": "2026-06-19", "clicks": 4, "impressions": 523},
+      {"date": "2026-06-20", "clicks": 3, "impressions": 489},
+      {"date": "2026-06-21", "clicks": 2, "impressions": 398},
+      {"date": "2026-06-22", "clicks": 4, "impressions": 531},
+      {"date": "2026-06-23", "clicks": 3, "impressions": 463}
+    ],
+    "top_queries": [
+      {"query": "cowhide rug", "clicks": 12, "impressions": 1840, "ctr": 0.65, "position": 8.4},
+      {"query": "brazilian cowhide rug", "clicks": 9, "impressions": 1420, "ctr": 0.63, "position": 6.2},
+      {"query": "cowhide rug large", "clicks": 8, "impressions": 1180, "ctr": 0.68, "position": 11.3},
+      {"query": "natural cowhide rug", "clicks": 7, "impressions": 1050, "ctr": 0.67, "position": 14.7},
+      {"query": "cowhide rug small", "clicks": 6, "impressions": 940, "ctr": 0.64, "position": 9.8},
+      {"query": "genuine leather rug", "clicks": 5, "impressions": 820, "ctr": 0.61, "position": 18.2},
+      {"query": "patchwork cowhide rug", "clicks": 4, "impressions": 710, "ctr": 0.56, "position": 22.4},
+      {"query": "cowhide rug brown white", "clicks": 4, "impressions": 680, "ctr": 0.59, "position": 16.9},
+      {"query": "imperialbraziliancowhiderug", "clicks": 7, "impressions": 290, "ctr": 2.41, "position": 1.2},
+      {"query": "round cowhide rug", "clicks": 3, "impressions": 590, "ctr": 0.51, "position": 28.6}
+    ],
+    "top_pages": [
+      {"page": "/", "clicks": 31, "impressions": 3840, "ctr": 0.81, "position": 12.4},
+      {"page": "/shop/", "clicks": 18, "impressions": 2640, "ctr": 0.68, "position": 19.7},
+      {"page": "/product-category/cowhide-rug-large/", "clicks": 12, "impressions": 1920, "ctr": 0.63, "position": 23.1},
+      {"page": "/product-category/cowhide-rug-small/", "clicks": 9, "impressions": 1480, "ctr": 0.61, "position": 21.8},
+      {"page": "/about/", "clicks": 7, "impressions": 980, "ctr": 0.71, "position": 15.3}
+    ]
+  }
+}

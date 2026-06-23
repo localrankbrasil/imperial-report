@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Imperial Brazilian Cowhide Rug — Performance Report</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+  :root {
+    --bg: #f1f3f4;
+    --surface: #ffffff;
+    --border: #e0e0e0;
+    --text: #1f2937;
+    --text-muted: #6b7280;
+    --primary: #1a56db;
+    --primary-light: #eff6ff;
+    --green: #059669;
+    --green-light: #ecfdf5;
+    --red: #dc2626;
+    --red-light: #fef2f2;
+    --orange: #d97706;
+    --orange-light: #fffbeb;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-left { display: flex; align-items: center; gap: 14px; }
+  .logo-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: linear-gradient(135deg, #92400e, #c2864a);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .logo-text { font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.2; }
+  .logo-sub  { font-size: 11px; color: var(--text-muted); font-weight: 400; }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+
+  select.period-select {
+    padding: 7px 28px 7px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+
+  .btn {
+    padding: 7px 16px; border-radius: 8px; font-size: 13px;
+    font-weight: 600; cursor: pointer; border: none; display: flex;
+    align-items: center; gap: 6px; transition: opacity .15s;
+  }
+  .btn:hover { opacity: .85; }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-outline { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+
+  /* ── NAV ── */
+  .nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    display: flex;
+    gap: 4px;
+    position: sticky;
+    top: 64px;
+    z-index: 99;
+  }
+  .nav-tab {
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all .15s;
+    white-space: nowrap;
+  }
+  .nav-tab:hover { color: var(--text); }
+  .nav-tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+
+  /* ── MAIN ── */
+  .main { max-width: 1280px; margin: 0 auto; padding: 28px 32px 60px; }
+
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-title {
+    font-size: 18px; font-weight: 700; margin-bottom: 4px;
+  }
+  .section-subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
+  .period-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: var(--primary-light); color: var(--primary);
+    font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 20px;
+    margin-left: 8px; vertical-align: middle;
+  }
+
+  /* ── KPI CARDS ── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .kpi-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+  }
+  .kpi-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 8px; }
+  .kpi-value { font-size: 26px; font-weight: 700; letter-spacing: -.5px; margin-bottom: 6px; }
+  .kpi-delta { font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+  .kpi-delta.up   { color: var(--green); }
+  .kpi-delta.down { color: var(--red); }
+  .kpi-delta.flat { color: var(--text-muted); }
+
+  /* ── CHART CARDS ── */
+  .chart-row { display: grid; gap: 16px; margin-bottom: 20px; }
+  .chart-row.cols-2 { grid-template-columns: 1fr 1fr; }
+  .chart-row.cols-3 { grid-template-columns: 2fr 1fr; }
+  .chart-row.cols-1 { grid-template-columns: 1fr; }
+
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+  }
+  .chart-card-title { font-size: 13px; font-weight: 600; margin-bottom: 16px; color: var(--text); }
+  .chart-wrap { position: relative; }
+
+  /* ── TABLE ── */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    text-align: left; padding: 10px 14px;
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .4px; color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    background: #fafafa;
+  }
+  thead th:first-child { border-radius: 8px 0 0 0; }
+  thead th:last-child  { border-radius: 0 8px 0 0; }
+  tbody tr { border-bottom: 1px solid #f3f4f6; transition: background .1s; }
+  tbody tr:hover { background: #fafafa; }
+  tbody td { padding: 11px 14px; }
+  tbody td:not(:first-child) { text-align: right; }
+  thead th:not(:first-child) { text-align: right; }
+  .badge-green { background: var(--green-light); color: var(--green); padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .badge-red   { background: var(--red-light);   color: var(--red);   padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .badge-orange{ background: var(--orange-light); color: var(--orange); padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+
+  /* ── FUNNEL ── */
+  .funnel { display: flex; flex-direction: column; gap: 8px; padding: 8px 0; }
+  .funnel-step { display: flex; align-items: center; gap: 12px; }
+  .funnel-bar-wrap { flex: 1; background: #f3f4f6; border-radius: 6px; height: 28px; overflow: hidden; }
+  .funnel-bar { height: 100%; border-radius: 6px; display: flex; align-items: center; padding: 0 10px; font-size: 12px; font-weight: 600; color: #fff; transition: width .6s ease; }
+  .funnel-label { font-size: 12px; color: var(--text-muted); width: 120px; flex-shrink: 0; }
+  .funnel-count { font-size: 13px; font-weight: 700; width: 60px; text-align: right; flex-shrink: 0; }
+  .funnel-pct   { font-size: 11px; color: var(--text-muted); width: 44px; text-align: right; flex-shrink: 0; }
+
+  /* ── DONUT LEGEND ── */
+  .donut-legend { display: flex; flex-direction: column; gap: 10px; justify-content: center; padding-left: 20px; }
+  .donut-legend-item { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+  .donut-legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+  .donut-legend-val { font-weight: 700; margin-left: auto; padding-left: 12px; }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: var(--border); margin: 28px 0; }
+
+  /* ── FOOTER ── */
+  .report-footer { text-align: center; font-size: 11px; color: var(--text-muted); padding-top: 24px; }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: #fff; font-size: 11px; }
+    .header, .nav { display: none !important; }
+    .section { display: block !important; page-break-after: always; }
+    .section:last-of-type { page-break-after: avoid; }
+    .main { padding: 20px; max-width: 100%; }
+    .btn, select.period-select { display: none !important; }
+    .chart-wrap canvas { max-height: 200px !important; }
+    .kpi-value { font-size: 20px; }
+    .print-header { display: block !important; }
+  }
+  .print-header { display: none; text-align: center; margin-bottom: 20px; }
+  .print-header h1 { font-size: 18px; font-weight: 700; }
+  .print-header p  { font-size: 12px; color: var(--text-muted); }
+
+  /* ── LOADING ── */
+  .loading { text-align: center; padding: 80px 20px; color: var(--text-muted); font-size: 14px; }
+  .spinner {
+    width: 32px; height: 32px; border: 3px solid var(--border);
+    border-top-color: var(--primary); border-radius: 50%;
+    animation: spin .7s linear infinite; margin: 0 auto 12px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    <div class="logo-icon">🐂</div>
+    <div>
+      <div class="logo-text">Imperial Brazilian Cowhide Rug</div>
+      <div class="logo-sub">Performance Report</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <select class="period-select" id="periodSelect" onchange="loadPeriod(this.value)">
+      <option value="2026-06">June 2026</option>
+      <option value="2026-05">May 2026</option>
+    </select>
+    <button class="btn btn-outline" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Print / PDF
+    </button>
+  </div>
+</header>
+
+<!-- NAV TABS -->
+<nav class="nav">
+  <div class="nav-tab active" onclick="switchTab('overview', this)">📊 Overview</div>
+  <div class="nav-tab" onclick="switchTab('ads', this)">🎯 Google Ads</div>
+  <div class="nav-tab" onclick="switchTab('merchant', this)">🏪 Merchant Center</div>
+  <div class="nav-tab" onclick="switchTab('analytics', this)">📈 Analytics</div>
+  <div class="nav-tab" onclick="switchTab('seo', this)">🔍 Search Console</div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="main" id="mainContent">
+  <div class="loading" id="loadingState">
+    <div class="spinner"></div>
+    Loading report data...
+  </div>
+
+  <!-- PRINT HEADER -->
+  <div class="print-header" id="printHeader">
+    <h1>Imperial Brazilian Cowhide Rug — Performance Report</h1>
+    <p id="printPeriodLabel"></p>
+  </div>
+
+  <!-- SECTION: OVERVIEW -->
+  <section class="section active" id="sec-overview">
+    <div class="section-title">Executive Overview <span class="period-badge" id="overviewBadge"></span></div>
+    <div class="section-subtitle">Key performance indicators for the selected period vs. previous period</div>
+
+    <div class="kpi-grid" id="kpi-overview"></div>
+
+    <div class="chart-row cols-3">
+      <div class="chart-card">
+        <div class="chart-card-title">Revenue & ROAS — Daily Trend</div>
+        <div class="chart-wrap"><canvas id="chart-revenue-trend" height="120"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-title">Revenue by Channel</div>
+        <div class="chart-wrap"><canvas id="chart-channel-donut" height="120"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: GOOGLE ADS -->
+  <section class="section" id="sec-ads">
+    <div class="section-title">Google Ads — Shopping <span class="period-badge" id="adsBadge"></span></div>
+    <div class="section-subtitle">Shopping campaign performance, spend efficiency, and search terms</div>
+
+    <div class="kpi-grid" id="kpi-ads"></div>
+
+    <div class="chart-row cols-2">
+      <div class="chart-card">
+        <div class="chart-card-title">Cost vs. Conversion Value — Daily</div>
+        <div class="chart-wrap"><canvas id="chart-cost-revenue" height="130"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-title">ROAS by Campaign</div>
+        <div class="chart-wrap"><canvas id="chart-roas-campaign" height="130"></canvas></div>
+      </div>
+    </div>
+
+    <div class="chart-card" style="margin-bottom:16px">
+      <div class="chart-card-title">Campaigns</div>
+      <div class="table-wrap" id="table-campaigns"></div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-card-title">Top Search Terms</div>
+      <div class="table-wrap" id="table-search-terms"></div>
+    </div>
+  </section>
+
+  <!-- SECTION: MERCHANT CENTER -->
+  <section class="section" id="sec-merchant">
+    <div class="section-title">Merchant Center <span class="period-badge" id="merchantBadge"></span></div>
+    <div class="section-subtitle">Product feed health, approval status, and top performing products</div>
+
+    <div class="kpi-grid" id="kpi-merchant"></div>
+
+    <div class="chart-row cols-2">
+      <div class="chart-card">
+        <div class="chart-card-title">Product Status</div>
+        <div style="display:flex; align-items:center; justify-content:center; gap:20px; padding:8px 0">
+          <div class="chart-wrap" style="width:200px; flex-shrink:0"><canvas id="chart-product-status" height="200"></canvas></div>
+          <div class="donut-legend" id="legend-product-status"></div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-title">Impressions by Category</div>
+        <div class="chart-wrap"><canvas id="chart-category-impressions" height="200"></canvas></div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-card-title">Top Products by Impressions</div>
+      <div class="table-wrap" id="table-top-products"></div>
+    </div>
+  </section>
+
+  <!-- SECTION: ANALYTICS -->
+  <section class="section" id="sec-analytics">
+    <div class="section-title">Google Analytics 4 <span class="period-badge" id="analyticsBadge"></span></div>
+    <div class="section-subtitle">Website traffic, user behavior, and e-commerce conversions</div>
+
+    <div class="kpi-grid" id="kpi-analytics"></div>
+
+    <div class="chart-row cols-2">
+      <div class="chart-card">
+        <div class="chart-card-title">Sessions — Daily</div>
+        <div class="chart-wrap"><canvas id="chart-sessions-daily" height="130"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-title">Purchase Funnel</div>
+        <div class="funnel" id="funnel-chart" style="padding:8px 0"></div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-card-title">Acquisition Channels</div>
+      <div class="table-wrap" id="table-channels"></div>
+    </div>
+  </section>
+
+  <!-- SECTION: SEARCH CONSOLE -->
+  <section class="section" id="sec-seo">
+    <div class="section-title">Search Console — Organic <span class="period-badge" id="seoBadge"></span></div>
+    <div class="section-subtitle">Organic search visibility, click-through rates, and top keywords</div>
+
+    <div class="kpi-grid" id="kpi-seo"></div>
+
+    <div class="chart-row cols-1">
+      <div class="chart-card">
+        <div class="chart-card-title">Impressions & Clicks — Daily</div>
+        <div class="chart-wrap"><canvas id="chart-seo-daily" height="100"></canvas></div>
+      </div>
+    </div>
+
+    <div class="chart-row cols-2">
+      <div class="chart-card">
+        <div class="chart-card-title">Top Keywords</div>
+        <div class="table-wrap" id="table-queries"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-title">Top Pages</div>
+        <div class="table-wrap" id="table-pages"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="report-footer" id="reportFooter"></div>
+</main>
+
+<script>
+// ── STATE ──────────────────────────────────────────────────────────────
+let data = null;
+let charts = {};
+
+// ── UTILS ──────────────────────────────────────────────────────────────
+const fmt = {
+  usd:  v => '$' + Number(v).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}),
+  num:  v => Number(v).toLocaleString('en-US'),
+  pct:  v => Number(v).toFixed(2) + '%',
+  x:    v => Number(v).toFixed(2) + 'x',
+  pos:  v => Number(v).toFixed(1),
+};
+
+function delta(curr, prev, inverted = false) {
+  if (!prev || prev === 0) return { pct: null, dir: 'flat' };
+  const d = ((curr - prev) / Math.abs(prev)) * 100;
+  const up = inverted ? d < 0 : d > 0;
+  return {
+    pct: Math.abs(d).toFixed(1),
+    dir: d === 0 ? 'flat' : (up ? 'up' : 'down'),
+    arrow: d === 0 ? '—' : (up ? '▲' : '▼'),
+  };
+}
+
+function kpiCard(label, value, prev, formatter, inverted = false) {
+  const d = delta(value, prev, inverted);
+  const deltaHtml = d.pct
+    ? `<div class="kpi-delta ${d.dir}">${d.arrow} ${d.pct}% vs prev period</div>`
+    : `<div class="kpi-delta flat">— no prev data</div>`;
+  return `
+    <div class="kpi-card">
+      <div class="kpi-label">${label}</div>
+      <div class="kpi-value">${formatter(value)}</div>
+      ${deltaHtml}
+    </div>`;
+}
+
+function shortLabel(url) {
+  return url.replace('https://imperialbraziliancowhiderug.com', '').replace(/\/$/, '') || '/';
+}
+
+function destroyChart(id) {
+  if (charts[id]) { charts[id].destroy(); delete charts[id]; }
+}
+
+// ── CHART DEFAULTS ────────────────────────────────────────────────────
+Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+Chart.defaults.font.size   = 11;
+Chart.defaults.color       = '#6b7280';
+Chart.defaults.plugins.legend.display = false;
+
+// ── TAB NAVIGATION ────────────────────────────────────────────────────
+function switchTab(id, el) {
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('sec-' + id).classList.add('active');
+}
+
+// ── LOAD PERIOD ───────────────────────────────────────────────────────
+async function loadPeriod(period) {
+  document.getElementById('loadingState').style.display = 'block';
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+
+  try {
+    const resp = await fetch(`data/${period}.json`);
+    if (!resp.ok) throw new Error('Data not available for this period');
+    data = await resp.json();
+    document.getElementById('loadingState').style.display = 'none';
+
+    const activeTab = document.querySelector('.nav-tab.active');
+    const tabId = activeTab ? activeTab.textContent.replace(/[^a-z]/gi, '').toLowerCase() : 'overview';
+    const tabMap = { overview: 'overview', googlea: 'ads', merchantc: 'merchant', analytics: 'analytics', searchc: 'seo' };
+    const sectionId = 'sec-' + (tabMap[tabId] || 'overview');
+    document.getElementById(sectionId)?.classList.add('active');
+
+    renderAll();
+  } catch(e) {
+    document.getElementById('loadingState').innerHTML = `<p style="color:var(--red)">⚠ ${e.message}</p>`;
+    document.getElementById('loadingState').style.display = 'block';
+  }
+}
+
+// ── RENDER ALL ────────────────────────────────────────────────────────
+function renderAll() {
+  const label = data.meta.period_label;
+  document.querySelectorAll('[id$="Badge"]').forEach(el => el.textContent = label);
+  document.getElementById('printPeriodLabel').textContent = label + ' · Generated ' + data.meta.generated_at;
+  document.getElementById('reportFooter').textContent = `Imperial Brazilian Cowhide Rug · ${label} · Report generated ${data.meta.generated_at} · localrankbrasil.com`;
+
+  renderOverview();
+  renderAds();
+  renderMerchant();
+  renderAnalytics();
+  renderSEO();
+}
+
+// ── OVERVIEW ─────────────────────────────────────────────────────────
+function renderOverview() {
+  const ex = data.executive;
+  const kpis = [
+    kpiCard('Revenue', ex.revenue, ex.revenue_prev, fmt.usd),
+    kpiCard('ROAS', ex.roas, ex.roas_prev, fmt.x),
+    kpiCard('Ad Spend', ex.cost, ex.cost_prev, fmt.usd, true),
+    kpiCard('Orders', ex.orders, ex.orders_prev, fmt.num),
+    kpiCard('Avg Order Value', ex.avg_order_value, ex.avg_order_value_prev, fmt.usd),
+    kpiCard('Paid Clicks', ex.paid_clicks, ex.paid_clicks_prev, fmt.num),
+  ];
+  document.getElementById('kpi-overview').innerHTML = kpis.join('');
+
+  // Revenue + ROAS trend
+  const daily = data.google_ads.daily;
+  destroyChart('revenue-trend');
+  charts['revenue-trend'] = new Chart(document.getElementById('chart-revenue-trend'), {
+    type: 'line',
+    data: {
+      labels: daily.map(d => d.date.slice(5)),
+      datasets: [
+        {
+          label: 'Revenue ($)',
+          data: daily.map(d => d.conversion_value),
+          borderColor: '#059669', backgroundColor: 'rgba(5,150,105,.08)',
+          fill: true, tension: .35, pointRadius: 3, yAxisID: 'y',
+        },
+        {
+          label: 'Cost ($)',
+          data: daily.map(d => d.cost),
+          borderColor: '#1a56db', backgroundColor: 'transparent',
+          borderDash: [4,3], tension: .35, pointRadius: 2, yAxisID: 'y',
+        }
+      ]
+    },
+    options: {
+      responsive: true, interaction: { mode: 'index' },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          labels: { boxWidth: 12, padding: 12, font: { size: 11 } }
+        }
+      },
+      scales: {
+        y: { ticks: { callback: v => '$' + v } },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+
+  // Channel donut
+  const channels = data.ga4.channels.filter(c => c.sessions > 0);
+  destroyChart('channel-donut');
+  charts['channel-donut'] = new Chart(document.getElementById('chart-channel-donut'), {
+    type: 'doughnut',
+    data: {
+      labels: channels.map(c => c.channel),
+      datasets: [{ data: channels.map(c => c.sessions),
+        backgroundColor: ['#1a56db','#059669','#6b7280','#d97706','#7c3aed'],
+        borderWidth: 2, borderColor: '#fff'
+      }]
+    },
+    options: {
+      responsive: true, cutout: '65%',
+      plugins: {
+        legend: { display: true, position: 'right', labels: { boxWidth: 10, padding: 10, font: { size: 11 } } },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw} sessions` } }
+      }
+    }
+  });
+}
+
+// ── ADS ───────────────────────────────────────────────────────────────
+function renderAds() {
+  const s = data.google_ads.summary;
+  const kpis = [
+    kpiCard('Ad Spend', s.cost, s.cost_prev, fmt.usd, true),
+    kpiCard('Clicks', s.clicks, s.clicks_prev, fmt.num),
+    kpiCard('CTR', s.ctr, s.ctr_prev, fmt.pct),
+    kpiCard('Avg CPC', s.avg_cpc, s.avg_cpc_prev, fmt.usd, true),
+    kpiCard('Conversions', s.conversions, s.conversions_prev, fmt.num),
+    kpiCard('ROAS', s.roas, s.roas_prev, fmt.x),
+  ];
+  document.getElementById('kpi-ads').innerHTML = kpis.join('');
+
+  // Cost vs Revenue daily
+  const daily = data.google_ads.daily;
+  destroyChart('cost-revenue');
+  charts['cost-revenue'] = new Chart(document.getElementById('chart-cost-revenue'), {
+    type: 'bar',
+    data: {
+      labels: daily.map(d => d.date.slice(5)),
+      datasets: [
+        { label: 'Revenue', data: daily.map(d => d.conversion_value), backgroundColor: 'rgba(5,150,105,.7)', borderRadius: 3 },
+        { label: 'Cost',    data: daily.map(d => d.cost), backgroundColor: 'rgba(26,86,219,.5)', borderRadius: 3 }
+      ]
+    },
+    options: {
+      responsive: true, interaction: { mode: 'index' },
+      plugins: { legend: { display: true, position: 'top', labels: { boxWidth: 10, padding: 10 } } },
+      scales: { y: { ticks: { callback: v => '$' + v } }, x: { grid: { display: false } } }
+    }
+  });
+
+  // ROAS by campaign
+  const camps = data.google_ads.campaigns;
+  destroyChart('roas-campaign');
+  charts['roas-campaign'] = new Chart(document.getElementById('chart-roas-campaign'), {
+    type: 'bar',
+    data: {
+      labels: camps.map(c => c.name.replace('Catch-All – ', '').replace('Top Sellers - ', '')),
+      datasets: [{
+        data: camps.map(c => c.roas),
+        backgroundColor: camps.map(c => c.roas >= 5 ? 'rgba(5,150,105,.7)' : 'rgba(220,38,38,.5)'),
+        borderRadius: 6,
+      }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true,
+      plugins: {
+        tooltip: { callbacks: { label: ctx => ` ROAS: ${ctx.raw.toFixed(2)}x` } }
+      },
+      scales: {
+        x: { ticks: { callback: v => v + 'x' } },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+
+  // Campaigns table
+  document.getElementById('table-campaigns').innerHTML = `
+    <table>
+      <thead><tr>
+        <th>Campaign</th><th>Status</th><th>Spend</th><th>Clicks</th>
+        <th>CTR</th><th>Conv.</th><th>Revenue</th><th>ROAS</th>
+      </tr></thead>
+      <tbody>
+        ${camps.map(c => `<tr>
+          <td>${c.name}</td>
+          <td><span class="badge-green">${c.status}</span></td>
+          <td>${fmt.usd(c.cost)}</td>
+          <td>${fmt.num(c.clicks)}</td>
+          <td>${fmt.pct(c.ctr)}</td>
+          <td>${c.conversions}</td>
+          <td>${fmt.usd(c.conversion_value)}</td>
+          <td><strong>${fmt.x(c.roas)}</strong></td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+
+  // Search terms
+  const terms = data.google_ads.search_terms;
+  document.getElementById('table-search-terms').innerHTML = `
+    <table>
+      <thead><tr><th>Search Term</th><th>Clicks</th><th>Impressions</th><th>CTR</th><th>Conversions</th></tr></thead>
+      <tbody>
+        ${terms.map(t => `<tr>
+          <td>${t.term}</td>
+          <td>${fmt.num(t.clicks)}</td>
+          <td>${fmt.num(t.impressions)}</td>
+          <td>${fmt.pct(t.ctr)}</td>
+          <td>${t.conversions > 0 ? `<span class="badge-green">${t.conversions}</span>` : '—'}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+
+// ── MERCHANT ──────────────────────────────────────────────────────────
+function renderMerchant() {
+  const mc = data.merchant_center;
+  const approvalPct = ((mc.approved / mc.total) * 100).toFixed(1);
+  document.getElementById('kpi-merchant').innerHTML = [
+    `<div class="kpi-card"><div class="kpi-label">Approved</div><div class="kpi-value" style="color:var(--green)">${fmt.num(mc.approved)}</div><div class="kpi-delta up">▲ ${approvalPct}% of total</div></div>`,
+    `<div class="kpi-card"><div class="kpi-label">Disapproved</div><div class="kpi-value" style="color:${mc.disapproved > 0 ? 'var(--red)':'var(--green)'}">${mc.disapproved}</div><div class="kpi-delta ${mc.disapproved > 0 ? 'down':'flat'}">${mc.disapproved > 0 ? '⚠ Needs attention':'✓ None'}</div></div>`,
+    `<div class="kpi-card"><div class="kpi-label">Total in Feed</div><div class="kpi-value">${fmt.num(mc.total)}</div><div class="kpi-delta flat">Active products</div></div>`,
+    `<div class="kpi-card"><div class="kpi-label">Under Review</div><div class="kpi-value">${mc.under_review}</div><div class="kpi-delta flat">Google review</div></div>`,
+  ].join('');
+
+  // Donut
+  destroyChart('product-status');
+  const colors = ['#059669','#dc2626','#d97706','#6b7280'];
+  const labels = ['Approved','Disapproved','Limited','Under Review'];
+  const vals   = [mc.approved, mc.disapproved, mc.limited, mc.under_review];
+  charts['product-status'] = new Chart(document.getElementById('chart-product-status'), {
+    type: 'doughnut',
+    data: {
+      labels,
+      datasets: [{ data: vals, backgroundColor: colors, borderWidth: 2, borderColor: '#fff' }]
+    },
+    options: {
+      responsive: false, cutout: '60%',
+      plugins: { tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw}` } } }
+    }
+  });
+
+  const legendEl = document.getElementById('legend-product-status');
+  legendEl.innerHTML = labels.map((l, i) => vals[i] > 0 ? `
+    <div class="donut-legend-item">
+      <div class="donut-legend-dot" style="background:${colors[i]}"></div>
+      <span>${l}</span>
+      <span class="donut-legend-val">${vals[i]}</span>
+    </div>` : '').join('');
+
+  // Category impressions
+  const cats = data.merchant_center.by_category.filter(c => c.approved > 0);
+  destroyChart('category-impressions');
+  charts['category-impressions'] = new Chart(document.getElementById('chart-category-impressions'), {
+    type: 'bar',
+    data: {
+      labels: cats.map(c => c.category),
+      datasets: [{
+        data: cats.map(c => c.count),
+        backgroundColor: ['#1a56db','#059669','#7c3aed','#d97706'].slice(0, cats.length),
+        borderRadius: 5,
+      }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true,
+      plugins: { tooltip: { callbacks: { label: ctx => ` ${ctx.raw} products` } } },
+      scales: { x: { grid: { display: false } }, y: { grid: { display: false } } }
+    }
+  });
+
+  // Top products
+  const prods = data.merchant_center.top_products;
+  document.getElementById('table-top-products').innerHTML = `
+    <table>
+      <thead><tr><th>Product</th><th>Impressions</th><th>Clicks</th><th>CTR</th></tr></thead>
+      <tbody>
+        ${prods.map(p => `<tr>
+          <td style="max-width:400px">${p.title}</td>
+          <td>${fmt.num(p.impressions)}</td>
+          <td>${fmt.num(p.clicks)}</td>
+          <td>${fmt.pct(p.ctr)}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+
+// ── ANALYTICS ─────────────────────────────────────────────────────────
+function renderAnalytics() {
+  const s = data.ga4.summary;
+  const kpis = [
+    kpiCard('Sessions', s.sessions, s.sessions_prev, fmt.num),
+    kpiCard('Users', s.users, s.users_prev, fmt.num),
+    kpiCard('Revenue', s.revenue, s.revenue_prev, fmt.usd),
+    kpiCard('Transactions', s.transactions, s.transactions_prev, fmt.num),
+    kpiCard('Conv. Rate', s.conversion_rate, s.conversion_rate_prev, fmt.pct),
+    kpiCard('Bounce Rate', s.bounce_rate, s.bounce_rate_prev, fmt.pct, true),
+  ];
+  document.getElementById('kpi-analytics').innerHTML = kpis.join('');
+
+  // Sessions daily
+  const daily = data.ga4.daily;
+  destroyChart('sessions-daily');
+  charts['sessions-daily'] = new Chart(document.getElementById('chart-sessions-daily'), {
+    type: 'line',
+    data: {
+      labels: daily.map(d => d.date.slice(5)),
+      datasets: [{
+        label: 'Sessions',
+        data: daily.map(d => d.sessions),
+        borderColor: '#1a56db', backgroundColor: 'rgba(26,86,219,.08)',
+        fill: true, tension: .35, pointRadius: 3,
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: { x: { grid: { display: false } } }
+    }
+  });
+
+  // Funnel
+  const f = data.ga4.funnel;
+  const steps = [
+    { label: 'Sessions',       val: f.sessions,       color: '#1a56db' },
+    { label: 'Product Views',  val: f.product_views,  color: '#3b82f6' },
+    { label: 'Add to Cart',    val: f.add_to_cart,     color: '#60a5fa' },
+    { label: 'Checkout',       val: f.checkout_started, color: '#93c5fd' },
+    { label: 'Purchase',       val: f.purchase,        color: '#059669' },
+  ];
+  const max = steps[0].val;
+  document.getElementById('funnel-chart').innerHTML = steps.map((s, i) => {
+    const pct = ((s.val / steps[0].val) * 100).toFixed(1);
+    const w   = ((s.val / max) * 100);
+    return `<div class="funnel-step">
+      <div class="funnel-label">${s.label}</div>
+      <div class="funnel-bar-wrap">
+        <div class="funnel-bar" style="width:${w}%; background:${s.color}">${i > 0 ? pct + '%' : ''}</div>
+      </div>
+      <div class="funnel-count">${fmt.num(s.val)}</div>
+      <div class="funnel-pct">${i > 0 ? pct + '%' : '100%'}</div>
+    </div>`;
+  }).join('');
+
+  // Channels table
+  const chs = data.ga4.channels;
+  document.getElementById('table-channels').innerHTML = `
+    <table>
+      <thead><tr><th>Channel</th><th>Sessions</th><th>Revenue</th><th>Transactions</th><th>Conv. Rate</th></tr></thead>
+      <tbody>
+        ${chs.map(c => `<tr>
+          <td>${c.channel}</td>
+          <td>${fmt.num(c.sessions)}</td>
+          <td>${c.revenue > 0 ? fmt.usd(c.revenue) : '—'}</td>
+          <td>${c.transactions > 0 ? `<span class="badge-green">${c.transactions}</span>` : '—'}</td>
+          <td>${c.conversion_rate > 0 ? fmt.pct(c.conversion_rate) : '—'}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+
+// ── SEO ───────────────────────────────────────────────────────────────
+function renderSEO() {
+  const s = data.search_console.summary;
+  const kpis = [
+    kpiCard('Organic Clicks', s.clicks, s.clicks_prev, fmt.num),
+    kpiCard('Impressions', s.impressions, s.impressions_prev, fmt.num),
+    kpiCard('CTR', s.ctr, s.ctr_prev, fmt.pct),
+    kpiCard('Avg Position', s.avg_position, s.avg_position_prev, fmt.pos, true),
+  ];
+  document.getElementById('kpi-seo').innerHTML = kpis.join('');
+
+  // Daily dual axis
+  const daily = data.search_console.daily;
+  destroyChart('seo-daily');
+  charts['seo-daily'] = new Chart(document.getElementById('chart-seo-daily'), {
+    type: 'line',
+    data: {
+      labels: daily.map(d => d.date.slice(5)),
+      datasets: [
+        {
+          label: 'Impressions',
+          data: daily.map(d => d.impressions),
+          borderColor: '#1a56db', backgroundColor: 'rgba(26,86,219,.06)',
+          fill: true, tension: .35, pointRadius: 2, yAxisID: 'y',
+        },
+        {
+          label: 'Clicks',
+          data: daily.map(d => d.clicks),
+          borderColor: '#059669', backgroundColor: 'transparent',
+          tension: .35, pointRadius: 3, borderWidth: 2, yAxisID: 'y2',
+        }
+      ]
+    },
+    options: {
+      responsive: true, interaction: { mode: 'index' },
+      plugins: { legend: { display: true, position: 'top', labels: { boxWidth: 10, padding: 10 } } },
+      scales: {
+        y:  { position: 'left',  ticks: { callback: v => v.toLocaleString() } },
+        y2: { position: 'right', grid: { drawOnChartArea: false } },
+        x:  { grid: { display: false } }
+      }
+    }
+  });
+
+  // Queries table
+  const queries = data.search_console.top_queries;
+  document.getElementById('table-queries').innerHTML = `
+    <table>
+      <thead><tr><th>Keyword</th><th>Clicks</th><th>Impressions</th><th>CTR</th><th>Position</th></tr></thead>
+      <tbody>
+        ${queries.map(q => `<tr>
+          <td>${q.query}</td>
+          <td>${fmt.num(q.clicks)}</td>
+          <td>${fmt.num(q.impressions)}</td>
+          <td>${fmt.pct(q.ctr)}</td>
+          <td>${fmt.pos(q.position)}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+
+  // Pages table
+  const pages = data.search_console.top_pages;
+  document.getElementById('table-pages').innerHTML = `
+    <table>
+      <thead><tr><th>Page</th><th>Clicks</th><th>Impressions</th><th>CTR</th><th>Position</th></tr></thead>
+      <tbody>
+        ${pages.map(p => `<tr>
+          <td style="max-width:200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">${shortLabel(p.page)}</td>
+          <td>${fmt.num(p.clicks)}</td>
+          <td>${fmt.num(p.impressions)}</td>
+          <td>${fmt.pct(p.ctr)}</td>
+          <td>${fmt.pos(p.position)}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────
+const params = new URLSearchParams(window.location.search);
+const initialPeriod = params.get('period') || document.getElementById('periodSelect').value;
+document.getElementById('periodSelect').value = initialPeriod;
+loadPeriod(initialPeriod);
+</script>
+</body>
+</html>
