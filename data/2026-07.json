@@ -1,0 +1,270 @@
+{
+  "meta": {
+    "period": "2026-07",
+    "period_label": "July 2026",
+    "generated_at": "2026-07-01",
+    "client": "Imperial Brazilian Cowhide Rug",
+    "currency": "USD"
+  },
+  "executive": {
+    "revenue": 0.0,
+    "revenue_prev": 0.0,
+    "roas": 0.0,
+    "roas_prev": 0.0,
+    "cost": 34.24,
+    "cost_prev": 2886.26,
+    "orders": 0,
+    "orders_prev": 0,
+    "avg_order_value": 0,
+    "avg_order_value_prev": 0,
+    "paid_clicks": 7,
+    "paid_clicks_prev": 491,
+    "impressions": 619,
+    "impressions_prev": 107302
+  },
+  "google_ads": {
+    "summary": {
+      "cost": 34.24,
+      "cost_prev": 2886.26,
+      "clicks": 7,
+      "clicks_prev": 491,
+      "impressions": 619,
+      "impressions_prev": 107302,
+      "ctr": 1.13,
+      "ctr_prev": 0.46,
+      "avg_cpc": 4.89,
+      "avg_cpc_prev": 5.88,
+      "conversions": 0.0,
+      "conversions_prev": 0.0,
+      "conversion_value": 0.0,
+      "conversion_value_prev": 0.0,
+      "roas": 0.0,
+      "roas_prev": 0.0
+    },
+    "campaigns": [
+      {
+        "name": "[SHOPPING] Top Sellers - Small Rugs",
+        "status": "ENABLED",
+        "cost": 34.24,
+        "clicks": 7,
+        "impressions": 619,
+        "ctr": 1.13,
+        "avg_cpc": 4.89,
+        "conversions": 0.0,
+        "conversion_value": 0.0,
+        "roas": 0.0
+      },
+      {
+        "name": "[SHOPPING] Catch-All – Average, Large & Patchwork",
+        "status": "PAUSED",
+        "cost": 0.0,
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_cpc": 0,
+        "conversions": 0.0,
+        "conversion_value": 0.0,
+        "roas": 0
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-07-01",
+        "cost": 34.24,
+        "clicks": 7,
+        "impressions": 619,
+        "conversions": 0.0,
+        "conversion_value": 0.0
+      }
+    ],
+    "search_terms": [
+      {
+        "term": "cow rug living room",
+        "clicks": 1,
+        "impressions": 11,
+        "ctr": 9.09,
+        "conversions": 0.0
+      },
+      {
+        "term": "cowhide rug",
+        "clicks": 1,
+        "impressions": 42,
+        "ctr": 2.38,
+        "conversions": 0.0
+      },
+      {
+        "term": "5 by 7 rug",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0.0,
+        "conversions": 0.0
+      },
+      {
+        "term": "animal shape rug",
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0.0,
+        "conversions": 0.0
+      },
+      {
+        "term": "beige cowhide rug",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0.0,
+        "conversions": 0.0
+      },
+      {
+        "term": "black and white rug",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0.0,
+        "conversions": 0.0
+      },
+      {
+        "term": "black cowhide rug",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0.0,
+        "conversions": 0.0
+      },
+      {
+        "term": "black pattern carpet",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0.0,
+        "conversions": 0.0
+      },
+      {
+        "term": "black patterned rug",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0.0,
+        "conversions": 0.0
+      },
+      {
+        "term": "black rug",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0.0,
+        "conversions": 0.0
+      },
+      {
+        "term": "brindle cowhide",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0.0,
+        "conversions": 0.0
+      },
+      {
+        "term": "brindle cowhide rug",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0.0,
+        "conversions": 0.0
+      },
+      {
+        "term": "brown carpet",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0.0,
+        "conversions": 0.0
+      },
+      {
+        "term": "brown cow pattern",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0.0,
+        "conversions": 0.0
+      },
+      {
+        "term": "brown cowhide",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0.0,
+        "conversions": 0.0
+      }
+    ]
+  },
+  "merchant_center": {
+    "approved": 223,
+    "disapproved": 95,
+    "limited": 0,
+    "under_review": 2,
+    "total": 320,
+    "by_category": [
+      {
+        "category": "Cowhide Rug Average",
+        "count": 78,
+        "approved": 57,
+        "disapproved": 20
+      },
+      {
+        "category": "Cowhide Rug Large",
+        "count": 111,
+        "approved": 84,
+        "disapproved": 26
+      },
+      {
+        "category": "Round Cowhide Patchwork",
+        "count": 31,
+        "approved": 25,
+        "disapproved": 6
+      },
+      {
+        "category": "Cowhide Rug Small",
+        "count": 99,
+        "approved": 56,
+        "disapproved": 43
+      },
+      {
+        "category": "Other",
+        "count": 1,
+        "approved": 1,
+        "disapproved": 0
+      }
+    ],
+    "top_products": []
+  },
+  "ga4": {
+    "summary": {
+      "sessions": 0,
+      "sessions_prev": 0,
+      "users": 0,
+      "users_prev": 0,
+      "revenue": 0,
+      "revenue_prev": 0,
+      "transactions": 0,
+      "transactions_prev": 0,
+      "conversion_rate": 0,
+      "conversion_rate_prev": 0,
+      "avg_session_duration": "—",
+      "bounce_rate": 0,
+      "bounce_rate_prev": 0
+    },
+    "channels": [],
+    "daily": [],
+    "funnel": {
+      "sessions": 0,
+      "product_views": 0,
+      "add_to_cart": 0,
+      "checkout_started": 0,
+      "purchase": 0
+    },
+    "_note": "GA4 not configured. Set GA4_PROPERTY_ID to enable."
+  },
+  "search_console": {
+    "summary": {
+      "clicks": 0,
+      "clicks_prev": 4,
+      "impressions": 0,
+      "impressions_prev": 138,
+      "ctr": 0,
+      "ctr_prev": 2.9,
+      "avg_position": 0,
+      "avg_position_prev": 17.5
+    },
+    "daily": [],
+    "top_queries": [],
+    "top_pages": []
+  }
+}
