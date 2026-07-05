@@ -2,7 +2,7 @@
   "meta": {
     "period": "2026-07",
     "period_label": "July 2026",
-    "generated_at": "2026-07-04",
+    "generated_at": "2026-07-05",
     "client": "Imperial Brazilian Cowhide Rug",
     "currency": "USD"
   },
@@ -11,28 +11,28 @@
     "revenue_prev": 0.0,
     "roas": 0.0,
     "roas_prev": 0.0,
-    "cost": 298.23,
+    "cost": 332.04,
     "cost_prev": 2886.26,
     "orders": 0,
     "orders_prev": 0,
     "avg_order_value": 0,
     "avg_order_value_prev": 0,
-    "paid_clicks": 60,
+    "paid_clicks": 67,
     "paid_clicks_prev": 491,
-    "impressions": 8332,
+    "impressions": 10751,
     "impressions_prev": 107302
   },
   "google_ads": {
     "summary": {
-      "cost": 298.23,
+      "cost": 332.04,
       "cost_prev": 2886.26,
-      "clicks": 60,
+      "clicks": 67,
       "clicks_prev": 491,
-      "impressions": 8332,
+      "impressions": 10751,
       "impressions_prev": 107302,
-      "ctr": 0.72,
+      "ctr": 0.62,
       "ctr_prev": 0.46,
-      "avg_cpc": 4.97,
+      "avg_cpc": 4.96,
       "avg_cpc_prev": 5.88,
       "conversions": 0.0,
       "conversions_prev": 0.0,
@@ -45,11 +45,11 @@
       {
         "name": "[SHOPPING] Top Sellers - Small Rugs",
         "status": "ENABLED",
-        "cost": 298.23,
-        "clicks": 60,
-        "impressions": 8332,
-        "ctr": 0.72,
-        "avg_cpc": 4.97,
+        "cost": 332.04,
+        "clicks": 67,
+        "impressions": 10751,
+        "ctr": 0.62,
+        "avg_cpc": 4.96,
         "conversions": 0.0,
         "conversion_value": 0.0,
         "roas": 0.0
@@ -94,9 +94,17 @@
       },
       {
         "date": "2026-07-04",
-        "cost": 25.15,
-        "clicks": 5,
-        "impressions": 395,
+        "cost": 58.96,
+        "clicks": 12,
+        "impressions": 2494,
+        "conversions": 0.0,
+        "conversion_value": 0.0
+      },
+      {
+        "date": "2026-07-05",
+        "cost": 0.0,
+        "clicks": 0,
+        "impressions": 320,
         "conversions": 0.0,
         "conversion_value": 0.0
       }
@@ -104,23 +112,23 @@
     "search_terms": [
       {
         "term": "cow rug",
-        "clicks": 6,
-        "impressions": 211,
-        "ctr": 2.84,
+        "clicks": 7,
+        "impressions": 262,
+        "ctr": 2.67,
         "conversions": 0.0
       },
       {
         "term": "cow hide rug",
         "clicks": 3,
-        "impressions": 431,
-        "ctr": 0.7,
+        "impressions": 562,
+        "ctr": 0.53,
         "conversions": 0.0
       },
       {
         "term": "cowhide",
         "clicks": 3,
-        "impressions": 337,
-        "ctr": 0.89,
+        "impressions": 380,
+        "ctr": 0.79,
         "conversions": 0.0
       },
       {
@@ -133,57 +141,71 @@
       {
         "term": "cowhide rug",
         "clicks": 2,
-        "impressions": 460,
-        "ctr": 0.43,
+        "impressions": 537,
+        "ctr": 0.37,
         "conversions": 0.0
       },
       {
         "term": "3x5 cowhide rug",
         "clicks": 1,
-        "impressions": 9,
-        "ctr": 11.11,
+        "impressions": 12,
+        "ctr": 8.33,
+        "conversions": 0.0
+      },
+      {
+        "term": "alfombras de animales",
+        "clicks": 1,
+        "impressions": 29,
+        "ctr": 3.45,
         "conversions": 0.0
       },
       {
         "term": "black white rug",
         "clicks": 1,
-        "impressions": 9,
-        "ctr": 11.11,
+        "impressions": 12,
+        "ctr": 8.33,
+        "conversions": 0.0
+      },
+      {
+        "term": "brown rug",
+        "clicks": 1,
+        "impressions": 10,
+        "ctr": 10.0,
         "conversions": 0.0
       },
       {
         "term": "cow hides for sale",
         "clicks": 1,
-        "impressions": 45,
-        "ctr": 2.22,
+        "impressions": 55,
+        "ctr": 1.82,
         "conversions": 0.0
       },
       {
         "term": "cow rug living room",
         "clicks": 1,
-        "impressions": 19,
-        "ctr": 5.26,
+        "impressions": 30,
+        "ctr": 3.33,
         "conversions": 0.0
       },
       {
         "term": "cow rugs",
         "clicks": 1,
-        "impressions": 45,
-        "ctr": 2.22,
+        "impressions": 61,
+        "ctr": 1.64,
         "conversions": 0.0
       },
       {
         "term": "cow skins",
         "clicks": 1,
-        "impressions": 32,
-        "ctr": 3.12,
+        "impressions": 34,
+        "ctr": 2.94,
         "conversions": 0.0
       },
       {
         "term": "cowhide leather",
         "clicks": 1,
-        "impressions": 43,
-        "ctr": 2.33,
+        "impressions": 57,
+        "ctr": 1.75,
         "conversions": 0.0
       },
       {
@@ -191,20 +213,6 @@
         "clicks": 1,
         "impressions": 34,
         "ctr": 2.94,
-        "conversions": 0.0
-      },
-      {
-        "term": "longhorn hide rug",
-        "clicks": 1,
-        "impressions": 5,
-        "ctr": 20.0,
-        "conversions": 0.0
-      },
-      {
-        "term": "real cowhide rug price",
-        "clicks": 1,
-        "impressions": 45,
-        "ctr": 2.22,
         "conversions": 0.0
       }
     ]
@@ -280,11 +288,11 @@
     "summary": {
       "clicks": 0,
       "clicks_prev": 5,
-      "impressions": 14,
+      "impressions": 19,
       "impressions_prev": 145,
       "ctr": 0,
       "ctr_prev": 3.45,
-      "avg_position": 14.4,
+      "avg_position": 15,
       "avg_position_prev": 17.3
     },
     "daily": [
@@ -297,9 +305,21 @@
         "date": "2026-07-02",
         "clicks": 0,
         "impressions": 3
+      },
+      {
+        "date": "2026-07-03",
+        "clicks": 0,
+        "impressions": 5
       }
     ],
     "top_queries": [
+      {
+        "query": "brazilian cowhide",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 33.5
+      },
       {
         "query": "brazilian cowhide rug",
         "clicks": 0,
@@ -319,9 +339,9 @@
       {
         "page": "https://imperialbraziliancowhiderug.com/",
         "clicks": 0,
-        "impressions": 4,
+        "impressions": 6,
         "ctr": 0,
-        "position": 15.2
+        "position": 21.3
       },
       {
         "page": "https://imperialbraziliancowhiderug.com/contact-us/",
@@ -366,6 +386,20 @@
         "position": 6
       },
       {
+        "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-mandala-120-m-diametro-3102-144-2/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-medio-209-x-188-m-2101-684/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
         "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-medio-209-x-211m-2101-617/",
         "clicks": 0,
         "impressions": 1,
@@ -392,6 +426,13 @@
         "impressions": 1,
         "ctr": 0,
         "position": 4
+      },
+      {
+        "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-pp-163-x-172m-2701-240/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
       }
     ]
   }
