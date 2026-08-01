@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "period": "2026-08",
+    "period_label": "August 2026",
+    "generated_at": "2026-08-01",
+    "client": "Imperial Brazilian Cowhide Rug",
+    "currency": "USD"
+  },
+  "executive": {
+    "revenue": 0.0,
+    "revenue_prev": 0.0,
+    "roas": 0,
+    "roas_prev": 0.0,
+    "cost": 0.0,
+    "cost_prev": 2971.13,
+    "orders": 0,
+    "orders_prev": 0,
+    "avg_order_value": 0,
+    "avg_order_value_prev": 0,
+    "paid_clicks": 0,
+    "paid_clicks_prev": 440,
+    "impressions": 0,
+    "impressions_prev": 98670
+  },
+  "google_ads": {
+    "summary": {
+      "cost": 0.0,
+      "cost_prev": 2971.13,
+      "clicks": 0,
+      "clicks_prev": 440,
+      "impressions": 0,
+      "impressions_prev": 98670,
+      "ctr": 0,
+      "ctr_prev": 0.45,
+      "avg_cpc": 0,
+      "avg_cpc_prev": 6.75,
+      "conversions": 0.0,
+      "conversions_prev": 0.0,
+      "conversion_value": 0.0,
+      "conversion_value_prev": 0.0,
+      "roas": 0,
+      "roas_prev": 0.0
+    },
+    "campaigns": [
+      {
+        "name": "[Shopping] Small Rugs",
+        "status": "PAUSED",
+        "cost": 0.0,
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_cpc": 0,
+        "conversions": 0.0,
+        "conversion_value": 0.0,
+        "roas": 0
+      },
+      {
+        "name": "[SHOPPING] Large Rugs",
+        "status": "PAUSED",
+        "cost": 0.0,
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_cpc": 0,
+        "conversions": 0.0,
+        "conversion_value": 0.0,
+        "roas": 0
+      }
+    ],
+    "daily": [],
+    "search_terms": []
+  },
+  "merchant_center": {
+    "approved": 218,
+    "disapproved": 121,
+    "limited": 0,
+    "under_review": 0,
+    "total": 339,
+    "by_category": [
+      {
+        "category": "Cowhide Rug Large",
+        "count": 95,
+        "approved": 57,
+        "disapproved": 38
+      },
+      {
+        "category": "Round Cowhide Patchwork",
+        "count": 32,
+        "approved": 23,
+        "disapproved": 9
+      },
+      {
+        "category": "Cowhide Rug Average",
+        "count": 75,
+        "approved": 51,
+        "disapproved": 24
+      },
+      {
+        "category": "Cowhide Rug Small",
+        "count": 86,
+        "approved": 40,
+        "disapproved": 46
+      },
+      {
+        "category": "Other",
+        "count": 51,
+        "approved": 47,
+        "disapproved": 4
+      }
+    ],
+    "top_products": []
+  },
+  "ga4": {
+    "summary": {
+      "sessions": 0,
+      "sessions_prev": 0,
+      "users": 0,
+      "users_prev": 0,
+      "revenue": 0,
+      "revenue_prev": 0,
+      "transactions": 0,
+      "transactions_prev": 0,
+      "conversion_rate": 0,
+      "conversion_rate_prev": 0,
+      "avg_session_duration": "—",
+      "bounce_rate": 0,
+      "bounce_rate_prev": 0
+    },
+    "channels": [],
+    "daily": [],
+    "funnel": {
+      "sessions": 0,
+      "product_views": 0,
+      "add_to_cart": 0,
+      "checkout_started": 0,
+      "purchase": 0
+    },
+    "_note": "GA4 not configured. Set GA4_PROPERTY_ID to enable."
+  },
+  "search_console": {
+    "summary": {
+      "clicks": 0,
+      "clicks_prev": 0,
+      "impressions": 0,
+      "impressions_prev": 112,
+      "ctr": 0,
+      "ctr_prev": 0,
+      "avg_position": 0,
+      "avg_position_prev": 16.4
+    },
+    "daily": [],
+    "top_queries": [],
+    "top_pages": []
+  }
+}
