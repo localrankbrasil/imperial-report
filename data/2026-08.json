@@ -2,7 +2,7 @@
   "meta": {
     "period": "2026-08",
     "period_label": "August 2026",
-    "generated_at": "2026-08-06",
+    "generated_at": "2026-08-07",
     "client": "Imperial Brazilian Cowhide Rug",
     "currency": "USD"
   },
@@ -72,16 +72,16 @@
   },
   "merchant_center": {
     "approved": 174,
-    "disapproved": 164,
+    "disapproved": 158,
     "limited": 0,
     "under_review": 0,
-    "total": 338,
+    "total": 332,
     "by_category": [
       {
         "category": "Cowhide Rug Large",
-        "count": 94,
+        "count": 92,
         "approved": 39,
-        "disapproved": 55
+        "disapproved": 53
       },
       {
         "category": "Round Cowhide Patchwork",
@@ -91,15 +91,15 @@
       },
       {
         "category": "Cowhide Rug Average",
-        "count": 74,
+        "count": 73,
         "approved": 51,
-        "disapproved": 23
+        "disapproved": 22
       },
       {
         "category": "Cowhide Rug Small",
-        "count": 85,
+        "count": 82,
         "approved": 14,
-        "disapproved": 71
+        "disapproved": 68
       },
       {
         "category": "Other",
