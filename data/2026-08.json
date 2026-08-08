@@ -2,7 +2,7 @@
   "meta": {
     "period": "2026-08",
     "period_label": "August 2026",
-    "generated_at": "2026-08-07",
+    "generated_at": "2026-08-08",
     "client": "Imperial Brazilian Cowhide Rug",
     "currency": "USD"
   },
@@ -168,6 +168,11 @@
         "date": "2026-08-04",
         "clicks": 0,
         "impressions": 5
+      },
+      {
+        "date": "2026-08-05",
+        "clicks": 0,
+        "impressions": 0
       }
     ],
     "top_queries": [
