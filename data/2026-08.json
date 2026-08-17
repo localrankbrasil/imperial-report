@@ -2,7 +2,7 @@
   "meta": {
     "period": "2026-08",
     "period_label": "August 2026",
-    "generated_at": "2026-08-16",
+    "generated_at": "2026-08-17",
     "client": "Imperial Brazilian Cowhide Rug",
     "currency": "USD"
   },
@@ -71,11 +71,11 @@
     "search_terms": []
   },
   "merchant_center": {
-    "approved": 161,
-    "disapproved": 150,
+    "approved": 159,
+    "disapproved": 149,
     "limited": 0,
     "under_review": 0,
-    "total": 311,
+    "total": 308,
     "by_category": [
       {
         "category": "Cowhide Rug Large",
@@ -103,9 +103,9 @@
       },
       {
         "category": "Other",
-        "count": 51,
-        "approved": 45,
-        "disapproved": 6
+        "count": 48,
+        "approved": 43,
+        "disapproved": 5
       }
     ],
     "top_products": []
@@ -141,11 +141,11 @@
     "summary": {
       "clicks": 0,
       "clicks_prev": 0,
-      "impressions": 38,
+      "impressions": 44,
       "impressions_prev": 116,
       "ctr": 0,
       "ctr_prev": 0,
-      "avg_position": 20.2,
+      "avg_position": 21.4,
       "avg_position_prev": 16.2
     },
     "daily": [
@@ -218,6 +218,11 @@
         "date": "2026-08-14",
         "clicks": 0,
         "impressions": 0
+      },
+      {
+        "date": "2026-08-15",
+        "clicks": 0,
+        "impressions": 6
       }
     ],
     "top_queries": [
@@ -229,11 +234,18 @@
         "position": 31
       },
       {
-        "query": "brazilian cowhide",
+        "query": "brazilian cow hides",
         "clicks": 0,
         "impressions": 1,
         "ctr": 0,
-        "position": 26
+        "position": 58
+      },
+      {
+        "query": "brazilian cowhide",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 37.3
       },
       {
         "query": "cowhide rug",
@@ -261,9 +273,9 @@
       {
         "page": "https://imperialbraziliancowhiderug.com/",
         "clicks": 0,
-        "impressions": 4,
+        "impressions": 7,
         "ctr": 0,
-        "position": 20.8
+        "position": 32.4
       },
       {
         "page": "https://imperialbraziliancowhiderug.com/about-us/",
@@ -292,6 +304,13 @@
         "impressions": 3,
         "ctr": 0,
         "position": 8
+      },
+      {
+        "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-grande-226-x-195m-2301-377/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
       },
       {
         "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-grande-227-x-204m-2301-375/",
@@ -348,6 +367,20 @@
         "impressions": 1,
         "ctr": 0,
         "position": 6
+      },
+      {
+        "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-medio-202-x-199-m-2101-652/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-medio-206-x-195-m-2101-685/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
       },
       {
         "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-medio-207-x-189m-2101-497/",
@@ -411,13 +444,6 @@
         "impressions": 3,
         "ctr": 0,
         "position": 62.7
-      },
-      {
-        "page": "https://imperialbraziliancowhiderug.com/shop-2/",
-        "clicks": 0,
-        "impressions": 2,
-        "ctr": 0,
-        "position": 5.5
       }
     ]
   }
