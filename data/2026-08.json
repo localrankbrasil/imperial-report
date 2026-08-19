@@ -2,7 +2,7 @@
   "meta": {
     "period": "2026-08",
     "period_label": "August 2026",
-    "generated_at": "2026-08-18",
+    "generated_at": "2026-08-19",
     "client": "Imperial Brazilian Cowhide Rug",
     "currency": "USD"
   },
@@ -72,16 +72,16 @@
   },
   "merchant_center": {
     "approved": 157,
-    "disapproved": 150,
+    "disapproved": 146,
     "limited": 0,
     "under_review": 0,
-    "total": 307,
+    "total": 303,
     "by_category": [
       {
         "category": "Cowhide Rug Large",
-        "count": 88,
+        "count": 86,
         "approved": 37,
-        "disapproved": 51
+        "disapproved": 49
       },
       {
         "category": "Round Cowhide Patchwork",
@@ -91,9 +91,9 @@
       },
       {
         "category": "Cowhide Rug Small",
-        "count": 79,
+        "count": 77,
         "approved": 12,
-        "disapproved": 67
+        "disapproved": 65
       },
       {
         "category": "Cowhide Rug Average",
@@ -141,11 +141,11 @@
     "summary": {
       "clicks": 0,
       "clicks_prev": 0,
-      "impressions": 44,
+      "impressions": 45,
       "impressions_prev": 116,
       "ctr": 0,
       "ctr_prev": 0,
-      "avg_position": 21.4,
+      "avg_position": 21.0,
       "avg_position_prev": 16.2
     },
     "daily": [
@@ -223,6 +223,11 @@
         "date": "2026-08-15",
         "clicks": 0,
         "impressions": 6
+      },
+      {
+        "date": "2026-08-16",
+        "clicks": 0,
+        "impressions": 1
       }
     ],
     "top_queries": [
@@ -325,6 +330,13 @@
         "impressions": 1,
         "ctr": 0,
         "position": 15
+      },
+      {
+        "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-grande-238-x-221-m-2401-479/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
       },
       {
         "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-mandala-120-m-diametro-3102-140-2/",
@@ -437,13 +449,6 @@
         "impressions": 1,
         "ctr": 0,
         "position": 3
-      },
-      {
-        "page": "https://imperialbraziliancowhiderug.com/recently-viewed-products/",
-        "clicks": 0,
-        "impressions": 3,
-        "ctr": 0,
-        "position": 62.7
       }
     ]
   }
