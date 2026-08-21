@@ -2,7 +2,7 @@
   "meta": {
     "period": "2026-08",
     "period_label": "August 2026",
-    "generated_at": "2026-08-20",
+    "generated_at": "2026-08-21",
     "client": "Imperial Brazilian Cowhide Rug",
     "currency": "USD"
   },
@@ -71,8 +71,8 @@
     "search_terms": []
   },
   "merchant_center": {
-    "approved": 155,
-    "disapproved": 147,
+    "approved": 154,
+    "disapproved": 148,
     "limited": 0,
     "under_review": 0,
     "total": 302,
@@ -98,8 +98,8 @@
       {
         "category": "Cowhide Rug Average",
         "count": 62,
-        "approved": 45,
-        "disapproved": 17
+        "approved": 44,
+        "disapproved": 18
       },
       {
         "category": "Other",
@@ -141,11 +141,11 @@
     "summary": {
       "clicks": 0,
       "clicks_prev": 0,
-      "impressions": 50,
+      "impressions": 54,
       "impressions_prev": 116,
       "ctr": 0,
       "ctr_prev": 0,
-      "avg_position": 20.6,
+      "avg_position": 21.1,
       "avg_position_prev": 16.2
     },
     "daily": [
@@ -217,7 +217,7 @@
       {
         "date": "2026-08-14",
         "clicks": 0,
-        "impressions": 0
+        "impressions": 1
       },
       {
         "date": "2026-08-15",
@@ -233,6 +233,11 @@
         "date": "2026-08-17",
         "clicks": 0,
         "impressions": 5
+      },
+      {
+        "date": "2026-08-18",
+        "clicks": 0,
+        "impressions": 3
       }
     ],
     "top_queries": [
@@ -332,9 +337,9 @@
       {
         "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-grande-226-x-195m-2301-377/",
         "clicks": 0,
-        "impressions": 1,
+        "impressions": 2,
         "ctr": 0,
-        "position": 7
+        "position": 9.5
       },
       {
         "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-grande-227-x-204m-2301-375/",
@@ -400,6 +405,13 @@
         "position": 6
       },
       {
+        "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-medio-198-x-164-m-2101-645/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 17
+      },
+      {
         "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-medio-202-x-199-m-2101-652/",
         "clicks": 0,
         "impressions": 1,
@@ -435,25 +447,18 @@
         "position": 7
       },
       {
+        "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-medio-212-x-198-m-2101-664/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
         "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-medio-212-x-202-m-2101-679/",
         "clicks": 0,
         "impressions": 1,
         "ctr": 0,
         "position": 2
-      },
-      {
-        "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-p-185-x-183m-2201-354/",
-        "clicks": 0,
-        "impressions": 2,
-        "ctr": 0,
-        "position": 25
-      },
-      {
-        "page": "https://imperialbraziliancowhiderug.com/product/tapete-de-couro-p-186-x-172m-2201-360/",
-        "clicks": 0,
-        "impressions": 1,
-        "ctr": 0,
-        "position": 6
       }
     ]
   }
